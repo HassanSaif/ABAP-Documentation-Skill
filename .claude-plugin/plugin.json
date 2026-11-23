@@ -1,0 +1,17 @@
+{
+  "name": "abap-docs",
+  "version": "1.1.0",
+  "description": "SAP ABAP documentation skills for abapGit repositories: repo-wide documentation passes (abap-documentation), single-object drill-downs (abap-document-object) and a module ownership index (abap-module-index).",
+  "author": {
+    "name": "HassanSaif"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/HassanSaif/ABAP-Documentation-Skill",
+  "keywords": [
+    "sap",
+    "abap",
+    "abapgit",
+    "documentation",
+    "skills"
+  ]
+}

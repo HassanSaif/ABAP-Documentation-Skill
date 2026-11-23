@@ -1,0 +1,126 @@
+{
+  "_README": [
+    "A worked example of a FINISHED config, with every name generalised. It shows the",
+    "shape of each section once the vocabulary decisions have been made with a human.",
+    "Nothing in it describes your estate.",
+    "",
+    "Do NOT copy this file. Run `modindex.py init` in your repo and let it detect the",
+    "layout, then use this as a reference for what a FINISHED config looks like --",
+    "particularly the segment_blacklist, which is always the site-specific part that",
+    "does the most work.",
+    "",
+    "Keys starting with '_' are ignored by the build."
+  ],
+
+  "$schema": "abap-module-index/1",
+  "project": "Example estate",
+
+  "paths": {
+    "source_roots": ["ZFOO_SD/src", "ZFOO_MM/src", "ZFOO_FI/src"],
+    "work_dir": "utilities/module-index",
+    "out_dir": "utilities/module-index",
+    "out_prefix": "appendix-module-index",
+    "mirrors": ["docs/module-index"]
+  },
+
+  "modules": {
+    "_comment": "core = the SAP modules this customer actually runs. buckets = concerns that are not SAP modules; name them X_* so they read as different. open = report evidence for anything else instead of dropping it.",
+    "core": ["SD", "MM", "FI", "CO", "WM", "PP", "QM", "PM", "HR"],
+    "buckets": {
+      "X_EINV": {"label": "eINV", "description": "e-invoicing / statutory reporting (co-ticks FI)"},
+      "X_TM": {"label": "TM", "description": "Transport Management"},
+      "X_ANALYTICS": {"label": "ANALYTICS", "description": "CDS / Fiori / OData analytics"},
+      "X_DOCS": {"label": "DOCS", "description": "document & EHS output management"},
+      "X_TRADE": {"label": "TRADE", "description": "foreign trade / customs / Intrastat"},
+      "X_TECH": {"label": "TECH", "description": "Basis / developer utility / framework"}
+    },
+    "open": true,
+    "not_modules": {
+      "PS": "0 objects write any PS table; the ZPS_* objects are WBS-settlement helpers owned by CO"
+    }
+  },
+
+  "packages": {
+    "providers": [
+      {"type": "tree"},
+      {"type": "zips", "path": "PACKAGE_SOURCES", "strip_prefixes": ["EXAMPLE_"]}
+    ],
+    "map": {
+      "ZFOO_SD": ["SD"],
+      "ZFOO_MM": ["MM"],
+      "ZFOO_FI": ["FI"],
+      "ZFOO_CO": ["CO"],
+      "ZFOO_WM": ["WM"],
+      "ZFOO_PP": ["PP"],
+      "ZFOO_QM": ["QM"],
+      "ZFOO_PM": ["PM"],
+      "ZFOO_HR": ["HR"],
+      "ZFOO_EINV": ["FI", "X_EINV"],
+      "ZFOO_EDOC": ["FI", "X_EINV"],
+      "ZFOO_TM": ["X_TM"],
+      "ZFOO_ANALYTICS": ["X_ANALYTICS"],
+      "ZFOO_DOCS": ["X_DOCS"],
+      "ZFOO_CUSTOMS": ["X_TRADE"],
+      "ZFOO_DEV": ["X_TECH"],
+      "ZFOO_BASIS": ["X_TECH"]
+    },
+    "excluded": ["ZABAP2XLSX", "ZABAP2XLSX_DEMOS"]
+  },
+
+  "naming": {
+    "_comment": "The blacklist is the highest-leverage setting in this file. Every entry here was confirmed from the objects' own short texts: GRP is a shared layer and ENT1/ENT2 are legal entities, IM is 'implementation', RF is the handheld layer (covered by a family rule instead), EXCEL/REST are technical layers.",
+    "segment_blacklist": ["GRP", "ENT1", "ENT2", "IM", "PK", "QCM", "REST", "EXCEL", "MIS",
+                          "ARC", "DEV", "CST", "RF", "DS", "CDS", "PACK", "MAT"],
+    "families": [
+      {"pattern": "^Z(XX_)?_?RF_", "modules": ["WM"], "label": "RF handheld scanning"},
+      {"pattern": "^ZXX_EINV_|^ZXX_EDOC_", "modules": ["FI", "X_EINV"], "label": "e-invoicing"},
+      {"pattern": "^ZMIS_", "modules": ["X_ANALYTICS"], "label": "MIS extract"},
+      {"pattern": "^Z(DS|C|I)_", "modules": ["X_ANALYTICS"], "label": "CDS view"},
+      {"pattern": "^ZTM_", "modules": ["X_TM"], "label": "Transport Management"},
+      {"pattern": "^ZBC_|^ZABAPGIT", "modules": ["X_TECH"], "label": "Basis/technical"}
+    ]
+  },
+
+  "text": {
+    "_comment": "secondary_script splits bilingual short texts into two columns, so the local team reads its own language and a reviewer reads English. Keywords only feed R8 (WEAK).",
+    "secondary_script": "cyrillic",
+    "keywords": {
+      "SD": ["ЗАКАЗ", "КЛИЕНТ", "СЧЕТ-ФАКТУР"],
+      "MM": ["ПОСТАВЩИК", "ЗАКУПК", "ПОСТУПЛЕН"],
+      "FI": ["ПРОВОДК", "БУХГАЛТЕР", "НДС"],
+      "WM": ["СКЛАД", "ПАЛЛЕТ"],
+      "PP": ["ПРОИЗВОДСТВ"]
+    }
+  },
+
+  "tuning": {
+    "_comment": "Defaults, restated so they are visible. Change them only with a measured reason.",
+    "max_hops": 6,
+    "fanin_gate": 40,
+    "tick_max_hop": 2,
+    "pkg_max_hop": 3,
+    "breadth_cap": 4
+  },
+
+  "validation": {
+    "held_out": {
+      "csv": "exports/atc-findings.csv",
+      "object_column": "object_name",
+      "package_column": "package",
+      "delimiter": ","
+    },
+    "thresholds": {
+      "min_ticked_pct": 97.0,
+      "max_unclassified_pct": 3.0,
+      "multi_module_band": [10.0, 30.0],
+      "min_high_confidence_pct": 80.0,
+      "max_module_share_pct": 35.0
+    },
+    "assertions": [
+      {"name": "every RF handheld unit ticks WM", "when_name_matches": "_RF_", "must_tick": ["WM"]},
+      {"name": "everything in the e-invoicing package ticks FI", "when_package": "ZFOO_EINV", "must_tick": ["FI"]}
+    ]
+  },
+
+  "seed": 20260101
+}

@@ -1,0 +1,3385 @@
+{
+  "_comment": [
+    "Universal SAP knowledge. Nothing in this file is customer-specific -- it is true of",
+    "any SAP system, so it ships with the skill and is NOT part of a site config.",
+    "A site config may override any dict entry per key, and appends to list-valued",
+    "entries unless it sets \"replace\": true. See references/configuration.md."
+  ],
+  "modules": {
+    "core": [
+      "SD",
+      "MM",
+      "FI",
+      "CO",
+      "WM",
+      "PP",
+      "QM",
+      "PM",
+      "PS",
+      "HR"
+    ],
+    "labels": {
+      "SD": "Sales & Distribution",
+      "MM": "Materials Management / Purchasing",
+      "FI": "Financial Accounting",
+      "CO": "Controlling",
+      "WM": "Warehouse Management / Logistics Execution",
+      "PP": "Production Planning",
+      "QM": "Quality Management",
+      "PM": "Plant Maintenance",
+      "PS": "Project System",
+      "HR": "Human Resources",
+      "X_TECH": "Basis / technical"
+    }
+  },
+  "naming": {
+    "custom_prefixes": [
+      "Z",
+      "Y"
+    ],
+    "module_segments": [
+      1,
+      2
+    ],
+    "token_map": {
+      "SD": "SD",
+      "MM": "MM",
+      "FI": "FI",
+      "CO": "CO",
+      "WM": "WM",
+      "PP": "PP",
+      "QM": "QM",
+      "PM": "PM",
+      "PS": "PS",
+      "HR": "HR",
+      "LE": "WM",
+      "MB": "MM",
+      "PUR": "MM",
+      "PO": "MM",
+      "SLS": "SD",
+      "BIL": "SD",
+      "PROD": "PP",
+      "MRP": "PP",
+      "MNT": "PM",
+      "MAINT": "PM"
+    },
+    "segment_blacklist": [
+      "CL",
+      "IF",
+      "CX",
+      "TEST",
+      "TMP",
+      "UTIL",
+      "COMMON",
+      "CORE",
+      "BASE",
+      "API",
+      "INT",
+      "SRV",
+      "APP",
+      "DEMO",
+      "OLD",
+      "NEW",
+      "BAK",
+      "COPY"
+    ],
+    "type_segment_blacklist": {
+      "SPRX": [
+        "CO",
+        "CLAS",
+        "DTEL",
+        "TABL",
+        "TTYP",
+        "INTF"
+      ]
+    }
+  },
+  "std_tables": {
+    "SD": [
+      "VBAK",
+      "VBAP",
+      "VBRK",
+      "VBRP",
+      "VBFA",
+      "VBEP",
+      "VBKD",
+      "VBPA",
+      "VBUK",
+      "VBUP",
+      "LIKP",
+      "LIPS",
+      "KONV",
+      "PRCD_ELEMENTS",
+      "KNVV",
+      "VBLB",
+      "VBBE",
+      "KNA1",
+      "TTDS",
+      "TZONE",
+      "TVRO",
+      "VTTK",
+      "VTTP",
+      "VTTS",
+      "VFKP",
+      "VFKK",
+      "TVKO",
+      "TVTW",
+      "TSPA",
+      "KONH",
+      "KONP",
+      "KONM",
+      "KONW",
+      "KONA",
+      "KOTE001",
+      "KOTG001"
+    ],
+    "MM": [
+      "MSEG",
+      "MKPF",
+      "MATDOC",
+      "EKKO",
+      "EKPO",
+      "EKBE",
+      "EKET",
+      "EKKN",
+      "EBAN",
+      "EBKN",
+      "RBKP",
+      "RSEG",
+      "MARD",
+      "MCHB",
+      "EINA",
+      "EINE",
+      "LFM1",
+      "MDBS",
+      "MAKT",
+      "MEAN",
+      "MAMT",
+      "MARM",
+      "LFA1",
+      "T023",
+      "T023T",
+      "T024",
+      "T024D",
+      "T156",
+      "T157",
+      "MARA"
+    ],
+    "FI": [
+      "BKPF",
+      "BSEG",
+      "BSID",
+      "BSIK",
+      "BSIS",
+      "BSAD",
+      "BSAK",
+      "BSAS",
+      "ACDOCA",
+      "FAGLFLEXA",
+      "FAGLFLEXT",
+      "SKA1",
+      "SKB1",
+      "LFB1",
+      "KNB1",
+      "REGUH",
+      "REGUP",
+      "BNKA",
+      "ANLA",
+      "ANLC",
+      "T012",
+      "T012K",
+      "T030"
+    ],
+    "CO": [
+      "COEP",
+      "COBK",
+      "COSS",
+      "COSP",
+      "COSB",
+      "CKMLHD",
+      "CKMLCR",
+      "CKIS",
+      "KEKO",
+      "KEPH",
+      "CE1",
+      "CE3",
+      "CE4",
+      "COKA",
+      "CSKS",
+      "CSLA",
+      "CSKT",
+      "TKA01",
+      "TKA02"
+    ],
+    "WM": [
+      "LQUA",
+      "LTAK",
+      "LTAP",
+      "LAGP",
+      "LEIN",
+      "LINP",
+      "LTBK",
+      "LTBP",
+      "LUBU",
+      "VEKP",
+      "VEPO"
+    ],
+    "PP": [
+      "AFKO",
+      "AFPO",
+      "AFRU",
+      "AFVC",
+      "AFVV",
+      "RESB",
+      "AUFM",
+      "PLPO",
+      "PLKO",
+      "MAPL",
+      "STPO",
+      "STKO",
+      "PLAF",
+      "MDKP",
+      "MDTB",
+      "CRHD"
+    ],
+    "QM": [
+      "QALS",
+      "QAMV",
+      "QAMR",
+      "QAVE",
+      "QMEL",
+      "QMFE",
+      "QMMA",
+      "QMUR",
+      "QPCD",
+      "QPMK",
+      "QDPS"
+    ],
+    "PM": [
+      "IFLOT",
+      "IFLOTX",
+      "EQUI",
+      "EQKT",
+      "AFIH",
+      "QMIH",
+      "ILOA",
+      "MHIS",
+      "MPLA",
+      "MPOS"
+    ],
+    "PS": [
+      "PROJ",
+      "PRPS",
+      "PRHI",
+      "PRTE",
+      "COBRA"
+    ],
+    "HR": [
+      "PA0001",
+      "PA0002",
+      "PA0006",
+      "PA0008",
+      "PA2001",
+      "PA2002",
+      "HRP1000",
+      "HRP1001",
+      "PCL1",
+      "PCL2",
+      "T500P",
+      "T510",
+      "T527X",
+      "T777D",
+      "T591A"
+    ],
+    "X_TECH": [
+      "TBTCO",
+      "TBTCP",
+      "TBTCS",
+      "BTCEVTJOB",
+      "TSP01",
+      "TST01",
+      "APQI",
+      "APQD"
+    ]
+  },
+  "_comment_non_discriminating": [
+    "Tables every module reads all day, so a READ of one proves nothing about ownership.",
+    "Listing a table here removes it from the read/write rules -- and only from those.",
+    "A table may appear BOTH here and under a module in std_tables, which is not a",
+    "contradiction: it says 'reading KNA1 tells you nothing, but a structure NAMED after",
+    "KNA1 is customer master'. The name rules (R13/R14) resolve through the unfiltered",
+    "map for exactly that reason. LFA1 earned its place here by measurement: it was the",
+    "sole reason objects got called FI, and demoting it left held-out accuracy essentially",
+    "unchanged."
+  ],
+  "non_discriminating_tables": [
+    "ADRC",
+    "AUFK",
+    "CSKS",
+    "CSKT",
+    "DD02L",
+    "DD03L",
+    "KNA1",
+    "LFA1",
+    "MAKT",
+    "MAMT",
+    "MARA",
+    "MARC",
+    "MARM",
+    "MBEW",
+    "MEAN",
+    "MVKE",
+    "SKA1",
+    "SKB1",
+    "T000",
+    "T001",
+    "T001K",
+    "T001W",
+    "T005",
+    "T006",
+    "T012",
+    "T012K",
+    "T023",
+    "T023T",
+    "T024",
+    "T024D",
+    "T030",
+    "T100",
+    "T156",
+    "T157",
+    "T500P",
+    "T510",
+    "T527X",
+    "T591A",
+    "TCURR",
+    "TKA01",
+    "TKA02",
+    "TRDIR",
+    "TSPA",
+    "TSTC",
+    "TTDS",
+    "TVARVC",
+    "TVKO",
+    "TVRO",
+    "TVTW",
+    "TZONE",
+    "USR01",
+    "USR02"
+  ],
+  "std_call_prefixes": [
+    [
+      "VA",
+      "SD"
+    ],
+    [
+      "VF",
+      "SD"
+    ],
+    [
+      "VL",
+      "SD"
+    ],
+    [
+      "VD",
+      "SD"
+    ],
+    [
+      "VK",
+      "SD"
+    ],
+    [
+      "VT",
+      "SD"
+    ],
+    [
+      "RVAD",
+      "SD"
+    ],
+    [
+      "RV",
+      "SD"
+    ],
+    [
+      "SD_",
+      "SD"
+    ],
+    [
+      "ME",
+      "MM"
+    ],
+    [
+      "MB",
+      "MM"
+    ],
+    [
+      "MI",
+      "MM"
+    ],
+    [
+      "MR",
+      "MM"
+    ],
+    [
+      "MSC",
+      "MM"
+    ],
+    [
+      "RM07",
+      "MM"
+    ],
+    [
+      "RM06",
+      "MM"
+    ],
+    [
+      "MM",
+      "MM"
+    ],
+    [
+      "FB",
+      "FI"
+    ],
+    [
+      "FAGL",
+      "FI"
+    ],
+    [
+      "FS",
+      "FI"
+    ],
+    [
+      "XD",
+      "FI"
+    ],
+    [
+      "XK",
+      "FI"
+    ],
+    [
+      "RFITEM",
+      "FI"
+    ],
+    [
+      "RFBILA",
+      "FI"
+    ],
+    [
+      "RFUM",
+      "FI"
+    ],
+    [
+      "F110",
+      "FI"
+    ],
+    [
+      "KS",
+      "CO"
+    ],
+    [
+      "KO",
+      "CO"
+    ],
+    [
+      "KE",
+      "CO"
+    ],
+    [
+      "CK",
+      "CO"
+    ],
+    [
+      "KP",
+      "CO"
+    ],
+    [
+      "KB",
+      "CO"
+    ],
+    [
+      "LT",
+      "WM"
+    ],
+    [
+      "LS",
+      "WM"
+    ],
+    [
+      "LM",
+      "WM"
+    ],
+    [
+      "LX",
+      "WM"
+    ],
+    [
+      "LB",
+      "WM"
+    ],
+    [
+      "LU",
+      "WM"
+    ],
+    [
+      "CO0",
+      "PP"
+    ],
+    [
+      "CO1",
+      "PP"
+    ],
+    [
+      "CO4",
+      "PP"
+    ],
+    [
+      "CA0",
+      "PP"
+    ],
+    [
+      "MD0",
+      "PP"
+    ],
+    [
+      "MD1",
+      "PP"
+    ],
+    [
+      "CS0",
+      "PP"
+    ],
+    [
+      "SAPLCORF",
+      "PP"
+    ],
+    [
+      "PP",
+      "PP"
+    ],
+    [
+      "IW",
+      "PM"
+    ],
+    [
+      "IE",
+      "PM"
+    ],
+    [
+      "IL",
+      "PM"
+    ],
+    [
+      "IP",
+      "PM"
+    ],
+    [
+      "IH",
+      "PM"
+    ],
+    [
+      "QA",
+      "QM"
+    ],
+    [
+      "QE",
+      "QM"
+    ],
+    [
+      "QM",
+      "QM"
+    ],
+    [
+      "QP",
+      "QM"
+    ],
+    [
+      "QC",
+      "QM"
+    ],
+    [
+      "CJ",
+      "PS"
+    ],
+    [
+      "CN",
+      "PS"
+    ],
+    [
+      "PA0",
+      "HR"
+    ],
+    [
+      "PT",
+      "HR"
+    ],
+    [
+      "PU",
+      "HR"
+    ],
+    [
+      "HR",
+      "HR"
+    ],
+    [
+      "BAPI_SALESORDER",
+      "SD"
+    ],
+    [
+      "BAPI_SALESDOCU",
+      "SD"
+    ],
+    [
+      "BAPI_OUTB_DELIVERY",
+      "SD"
+    ],
+    [
+      "BAPI_INB_DELIVERY",
+      "SD"
+    ],
+    [
+      "BAPI_BILLINGDOC",
+      "SD"
+    ],
+    [
+      "BAPI_DELIVERYPROCESSING",
+      "SD"
+    ],
+    [
+      "RV_INVOICE_CREATE",
+      "SD"
+    ],
+    [
+      "SD_SALESDOCUMENT",
+      "SD"
+    ],
+    [
+      "RV_CONDITION",
+      "SD"
+    ],
+    [
+      "BAPI_PO_",
+      "MM"
+    ],
+    [
+      "BAPI_REQUISITION",
+      "MM"
+    ],
+    [
+      "BAPI_GOODSMVT",
+      "MM"
+    ],
+    [
+      "BAPI_MATERIAL_",
+      "MM"
+    ],
+    [
+      "BAPI_INCOMINGINVOICE",
+      "MM"
+    ],
+    [
+      "BAPI_PHYSINV",
+      "MM"
+    ],
+    [
+      "BAPI_RESERVATION",
+      "MM"
+    ],
+    [
+      "MB_CREATE_GOODS_MOVEMENT",
+      "MM"
+    ],
+    [
+      "BAPI_INFORECORD",
+      "MM"
+    ],
+    [
+      "BAPI_ACC_DOCUMENT",
+      "FI"
+    ],
+    [
+      "BAPI_ACC_GL",
+      "FI"
+    ],
+    [
+      "POSTING_INTERFACE",
+      "FI"
+    ],
+    [
+      "BAPI_ACC_INVOICE",
+      "FI"
+    ],
+    [
+      "BAPI_ACC_BILLING",
+      "FI"
+    ],
+    [
+      "FI_DOCUMENT_POST",
+      "FI"
+    ],
+    [
+      "BAPI_ACC_ACTIVITY_ALLOC",
+      "CO"
+    ],
+    [
+      "BAPI_COSTESTIMATE",
+      "CO"
+    ],
+    [
+      "BAPI_COSTCENTER",
+      "CO"
+    ],
+    [
+      "BAPI_INTERNALORDER",
+      "CO"
+    ],
+    [
+      "BAPI_PRODORD",
+      "PP"
+    ],
+    [
+      "BAPI_PLANNEDORDER",
+      "PP"
+    ],
+    [
+      "BAPI_MATERIAL_BOM",
+      "PP"
+    ],
+    [
+      "BAPI_INSPECTIONLOT",
+      "QM"
+    ],
+    [
+      "BAPI_INSPLOT",
+      "QM"
+    ],
+    [
+      "BAPI_QUALNOT",
+      "QM"
+    ],
+    [
+      "BAPI_ALM_ORDER",
+      "PM"
+    ],
+    [
+      "BAPI_ALM_NOTIF",
+      "PM"
+    ],
+    [
+      "BAPI_EQUI_",
+      "PM"
+    ],
+    [
+      "BAPI_FUNCLOC",
+      "PM"
+    ],
+    [
+      "BAPI_MEASUREMENTDOC",
+      "PM"
+    ],
+    [
+      "HR_INFOTYPE_OPERATION",
+      "HR"
+    ],
+    [
+      "BAPI_HRMASTER",
+      "HR"
+    ],
+    [
+      "BAPI_ABSENCE",
+      "HR"
+    ],
+    [
+      "BAPI_EMPLOYEE_",
+      "HR"
+    ],
+    [
+      "HR_MAINTAIN_MASTERDATA",
+      "HR"
+    ],
+    [
+      "BAPI_PTMGRTMSHEET",
+      "HR"
+    ],
+    [
+      "L_TO_CREATE",
+      "WM"
+    ],
+    [
+      "L_TO_CONFIRM",
+      "WM"
+    ],
+    [
+      "BAPI_WHSE",
+      "WM"
+    ],
+    [
+      "BAPI_PROJECT_MAINTAIN",
+      "PS"
+    ],
+    [
+      "BAPI_NETWORK_MAINTAIN",
+      "PS"
+    ],
+    [
+      "POS_",
+      "SD"
+    ],
+    [
+      "WPU",
+      "SD"
+    ]
+  ],
+  "_comment_std_call_ignore": [
+    "Framework plumbing. LSVIM* is the single most-called standard target in a typical",
+    "estate (SM30 table maintenance); left in, it misclassifies the function group of",
+    "every maintained table."
+  ],
+  "std_call_ignore": [
+    "LSVIM",
+    "SAPLSVIM",
+    "SAPLMCS",
+    "ICONS",
+    "RSEF4HLP",
+    "BDCRECXY",
+    "RVADTABL",
+    "SAPLZZ",
+    "LSTXW",
+    "SAPLSTXD",
+    "SAPLSTXB",
+    "SAPLOLEA",
+    "SAPLSDIFRUNTIME",
+    "SAPLSGRP",
+    "SAPLSUGS",
+    "SAPLSALV",
+    "SAPLKKBL",
+    "SAPLSLVC",
+    "SD_CALC_DURATION",
+    "SD_DATETIME_DIFFERENCE",
+    "SD_DATE_",
+    "MM_ARRANG_",
+    "SD_ADDRESS",
+    "SD_PRINT_TERMS_OF_PAYMEN",
+    "BAPI_TRANSACTION",
+    "BAPI_MESSAGE",
+    "BAPI_USER",
+    "BAPI_ADDR"
+  ],
+  "_comment_badi_spots": [
+    "R3: the STANDARD object being enhanced names the module with certainty. Keys are",
+    "matched as a prefix of, or a substring in, the BAdI spot / classic exit /",
+    "enhanced-object name."
+  ],
+  "badi_spots": {
+    "ME_PROCESS_PO": [
+      "MM"
+    ],
+    "ME_GUI_PO": [
+      "MM"
+    ],
+    "ME_PROCESS_REQ": [
+      "MM"
+    ],
+    "ME_REQ_POSTED": [
+      "MM"
+    ],
+    "MB_MIGO": [
+      "MM"
+    ],
+    "MB_DOCUMENT_BADI": [
+      "MM"
+    ],
+    "MRM_PAYMENT_TERMS": [
+      "MM"
+    ],
+    "INVOICE_UPDATE": [
+      "MM"
+    ],
+    "MRM_HEADER_CHECK": [
+      "MM"
+    ],
+    "ES_BADI_ME_REPORTING": [
+      "MM"
+    ],
+    "VENDOR_ADD_DATA": [
+      "MM"
+    ],
+    "SMOD_MEREQ": [
+      "MM"
+    ],
+    "ES_SD_SLS_EXTEND": [
+      "SD"
+    ],
+    "BADI_SD_CM": [
+      "SD"
+    ],
+    "CUSTOMER_ADD_DATA": [
+      "SD"
+    ],
+    "BADI_SD_SALES_ITEM": [
+      "SD"
+    ],
+    "ES_LOG_EDI_SDOCREQOUT": [
+      "SD"
+    ],
+    "ES_WLF_CLD_SDOC": [
+      "SD"
+    ],
+    "WLF_ACCOUNT_DETERMIN": [
+      "SD"
+    ],
+    "LE_SHP_DELIVERY_PROC": [
+      "SD",
+      "WM"
+    ],
+    "LE_SHP_TAB_CUST_ITEM": [
+      "SD",
+      "WM"
+    ],
+    "WB2_CC_SETTLEMENT": [
+      "SD",
+      "MM"
+    ],
+    "WCB_CC": [
+      "SD",
+      "MM"
+    ],
+    "WLF_ACC_ENHANCEMENT": [
+      "SD",
+      "FI"
+    ],
+    "BADI_ACC_DOCUMENT": [
+      "FI"
+    ],
+    "ACC_DOCUMENT": [
+      "FI"
+    ],
+    "AC_DOCUMENT": [
+      "FI"
+    ],
+    "FI_BILL_ISSUE_SPLIT": [
+      "FI",
+      "SD"
+    ],
+    "FI_GL_POSTING_SPLIT": [
+      "FI"
+    ],
+    "FI_INVOICE_RECEIPT_SPLIT": [
+      "FI",
+      "MM"
+    ],
+    "FI_TRANS_DATE_DERIVE": [
+      "FI"
+    ],
+    "FAGL_ITEMS_CH_DATA": [
+      "FI"
+    ],
+    "FAGL_": [
+      "FI"
+    ],
+    "TRIP_POST_FI": [
+      "FI"
+    ],
+    "ES_EDOCUMENT": [
+      "FI"
+    ],
+    "UKM_": [
+      "FI",
+      "SD"
+    ],
+    "WORKORDER_UPDATE": [
+      "PP",
+      "PM"
+    ],
+    "WORKORDER_CONFIRM": [
+      "PP"
+    ],
+    "WORKORDER_GOODSMVT": [
+      "PP"
+    ],
+    "WORKORDER_INFOSYSTEM": [
+      "PP"
+    ],
+    "WORKORDER_RELEASE": [
+      "PP"
+    ],
+    "ES_PPH_MRP_BADI": [
+      "PP"
+    ],
+    "MD_": [
+      "PP"
+    ],
+    "BOM_EXIT": [
+      "PP"
+    ],
+    "BOM_UPDATE": [
+      "PP"
+    ],
+    "MD_ADD_ELEMENTS": [
+      "PP"
+    ],
+    "MD_CHANGE_MRP_DATA": [
+      "PP"
+    ],
+    "BADI_MATERIAL_REF": [
+      "MM",
+      "PP"
+    ],
+    "IBAPI_ALM_ORD_MODIFY": [
+      "PM"
+    ],
+    "NOTIF_EVENT_SAVE": [
+      "PM"
+    ],
+    "WZRE_EXTERNAL_POSTING": [
+      "PM"
+    ],
+    "RBT_ENH_BADI_SETTLE": [
+      "PM"
+    ],
+    "WBS_SETTLEMENT_RULE": [
+      "PM",
+      "CO"
+    ],
+    "ALM_ME_": [
+      "PM"
+    ],
+    "ES_CO_": [
+      "CO"
+    ],
+    "CO_DOCUMENT": [
+      "CO"
+    ],
+    "COPA": [
+      "CO"
+    ],
+    "QPL1_": [
+      "QM"
+    ],
+    "QSS1_": [
+      "QM"
+    ],
+    "QM_": [
+      "QM"
+    ],
+    "PROJECT_UPDATE": [
+      "PS"
+    ],
+    "WORKBREAKDOWN_UPDATE": [
+      "PS"
+    ],
+    "HRPAD00INFTY": [
+      "HR"
+    ],
+    "HRBAS00INFTY": [
+      "HR"
+    ],
+    "MB_MIGO_BADI": [
+      "MM"
+    ],
+    "LMEK": [
+      "MM"
+    ],
+    "ASSORTMENTLIST_UPD": [
+      "MM"
+    ],
+    "ASSORTMENTLIST_UPD_2": [
+      "MM"
+    ],
+    "ASSORTMENT_LIST": [
+      "MM"
+    ],
+    "WBB_ARTICLE_SELECT": [
+      "MM"
+    ],
+    "POS_SALES_TRANSFER": [
+      "SD"
+    ]
+  },
+  "_comment_exit_includes": [
+    "R4: classic SMOD exit includes (ZX<fgrp>U01 style). The include name is derived",
+    "from the SAP exit function group, so it self-classifies with certainty."
+  ],
+  "exit_include_prefixes": [
+    [
+      "ZXM61",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXMBC",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXBWL",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXM08",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXDRU",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXMG0",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXM06",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXM02",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXLTO",
+      [
+        "WM"
+      ]
+    ],
+    [
+      "ZXLIN",
+      [
+        "WM"
+      ]
+    ],
+    [
+      "ZXLDB",
+      [
+        "WM"
+      ]
+    ],
+    [
+      "ZXLVS",
+      [
+        "WM"
+      ]
+    ],
+    [
+      "ZXVVF",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXVEDF",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXAGX",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXATP",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXEDF",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXV05",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXVED",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXVVA",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXKKE",
+      [
+        "CO"
+      ]
+    ],
+    [
+      "ZXCO1",
+      [
+        "CO"
+      ]
+    ],
+    [
+      "ZXCOF",
+      [
+        "CO"
+      ]
+    ],
+    [
+      "ZXCOZR",
+      [
+        "CO"
+      ]
+    ],
+    [
+      "ZXF04",
+      [
+        "FI"
+      ]
+    ],
+    [
+      "ZXFMR",
+      [
+        "FI"
+      ]
+    ],
+    [
+      "ZXFI0",
+      [
+        "FI"
+      ]
+    ],
+    [
+      "ZXF05",
+      [
+        "FI"
+      ]
+    ],
+    [
+      "ZXCSA",
+      [
+        "PP"
+      ]
+    ],
+    [
+      "ZXCN1",
+      [
+        "PP"
+      ]
+    ],
+    [
+      "ZXCO0",
+      [
+        "PP"
+      ]
+    ],
+    [
+      "ZXQSS",
+      [
+        "QM"
+      ]
+    ],
+    [
+      "ZXQEE",
+      [
+        "QM"
+      ]
+    ],
+    [
+      "ZXIWO",
+      [
+        "PM"
+      ]
+    ],
+    [
+      "ZXPM0",
+      [
+        "PM"
+      ]
+    ],
+    [
+      "ZXPAD",
+      [
+        "HR"
+      ]
+    ],
+    [
+      "ZXPBS",
+      [
+        "HR"
+      ]
+    ],
+    [
+      "ZXMBWL",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXMBM",
+      [
+        "MM"
+      ]
+    ],
+    [
+      "ZXVBL",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXWVK",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXUSR",
+      [
+        "@TECHNICAL"
+      ]
+    ],
+    [
+      "ZXWPU",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXWPD",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXWBB",
+      [
+        "SD"
+      ]
+    ],
+    [
+      "ZXVSV",
+      [
+        "SD"
+      ]
+    ]
+  ],
+  "_comment_appl": [
+    "R8 only, WEAK. TRDIR-APPL, the SAP application area of a program. Present on",
+    "only part of the programs. 'R' (cross-application) and '*' are deliberately",
+    "unmapped. Verify against your own estate before trusting it -- it fires last and",
+    "only when every other rule came up empty."
+  ],
+  "appl_modules": {
+    "V": "SD",
+    "M": "MM",
+    "F": "FI",
+    "K": "CO",
+    "L": "WM",
+    "I": "PM",
+    "G": "FI"
+  },
+  "text_keywords": {
+    "SD": [
+      "SALES ORDER",
+      "CUSTOMER",
+      "DELIVERY",
+      "BILLING",
+      "SHIPMENT",
+      "PRICING"
+    ],
+    "MM": [
+      "PURCHAS",
+      "PURCHASE ORDER",
+      "VENDOR",
+      "INFORECORD",
+      "GOODS RECEIPT",
+      "GOODS ISSUE",
+      "MATERIAL DOCUMENT"
+    ],
+    "FI": [
+      "ACCOUNTING",
+      "GL ACCOUNT",
+      "PAYMENT",
+      "VAT",
+      "TAX",
+      "LEDGER",
+      "DUNNING",
+      "ASSET ACCOUNT"
+    ],
+    "CO": [
+      "COST CENTER",
+      "COSTING",
+      "PROFITABILITY",
+      "COGS",
+      "OVERHEAD",
+      "INTERNAL ORDER"
+    ],
+    "WM": [
+      "WAREHOUSE",
+      "STORAGE BIN",
+      "PALLET",
+      "TRANSFER ORDER",
+      "STOCK",
+      "HANDLING UNIT",
+      "PICKING"
+    ],
+    "PP": [
+      "PRODUCTION ORDER",
+      "PRODUCTION",
+      "BOM",
+      "BILL OF MATERIAL",
+      "ROUTING",
+      "MRP",
+      "CONFIRMATION",
+      "PLANNED ORDER"
+    ],
+    "QM": [
+      "QUALITY",
+      "INSPECTION",
+      "INSPECTION LOT",
+      "DEFECT",
+      "USAGE DECISION"
+    ],
+    "PM": [
+      "MAINTENANCE",
+      "EQUIPMENT",
+      "FUNCTIONAL LOCATION",
+      "BREAKDOWN",
+      "MEASURING POINT"
+    ],
+    "PS": [
+      "PROJECT",
+      "WBS",
+      "WORK BREAKDOWN",
+      "NETWORK ACTIVITY"
+    ],
+    "HR": [
+      "PAYROLL",
+      "EMPLOYEE",
+      "PERSONNEL",
+      "INFOTYPE",
+      "TIME EVALUATION"
+    ]
+  },
+  "_comment_third_party": [
+    "Open-source ABAP that ships inside customer packages. It is not custom business",
+    "code and must never occupy rows in the deliverable: abap2xlsx alone is ~330",
+    "objects and puts 78 UNCLASSIFIED ZCL_EXCEL* classes on sheet 1."
+  ],
+  "third_party": {
+    "name_patterns": [
+      "^Z?(ABAPGIT|IF_ABAPGIT|CL_ABAPGIT|CX_ABAPGIT|CLS_ABAPGIT|ABAP2XLSX)",
+      "^ZCL_EXCEL",
+      "^ZEXCEL",
+      "^ZDEMO_",
+      "^ZCL_MOCKA",
+      "^ZIF_MOCKA",
+      "^ZCL_ABAP_UNIT",
+      "^ZCX_ABAPGIT"
+    ],
+    "packages": [
+      "ZABAP2XLSX",
+      "ZABAP2XLSX",
+      "ZABAPGIT",
+      "ZMOCKA",
+      "ZAOC",
+      "ZAJSON"
+    ]
+  },
+  "object_types": {
+    "known": [
+      "aqbg",
+      "aqqu",
+      "aqsg",
+      "auth",
+      "avas",
+      "chdo",
+      "clas",
+      "cmod",
+      "ddls",
+      "ddlx",
+      "devc",
+      "dial",
+      "doct",
+      "doma",
+      "dtel",
+      "ecat",
+      "enhc",
+      "enho",
+      "enhs",
+      "enqu",
+      "form",
+      "fugr",
+      "iarp",
+      "iasp",
+      "iatu",
+      "idoc",
+      "iext",
+      "intf",
+      "iwmo",
+      "iwom",
+      "iwpr",
+      "iwsg",
+      "iwsv",
+      "iwvb",
+      "msag",
+      "nrob",
+      "para",
+      "pinf",
+      "prag",
+      "prog",
+      "scp1",
+      "scvi",
+      "sfbf",
+      "sfbs",
+      "sfpf",
+      "sfpi",
+      "shi3",
+      "shlp",
+      "shma",
+      "sicf",
+      "smim",
+      "splo",
+      "sprx",
+      "srfc",
+      "srvb",
+      "srvd",
+      "ssfo",
+      "ssst",
+      "stvi",
+      "styl",
+      "susc",
+      "sush",
+      "suso",
+      "sxci",
+      "tabl",
+      "tobj",
+      "tran",
+      "ttyp",
+      "type",
+      "ucsa",
+      "udmo",
+      "vcls",
+      "view",
+      "w3ht",
+      "w3mi",
+      "wapa",
+      "wdca",
+      "wdcc",
+      "wdya",
+      "wdyn",
+      "webi",
+      "xinx",
+      "xslt"
+    ],
+    "opaque_names": [
+      "sicf",
+      "iatu",
+      "iwsv",
+      "iwmo",
+      "iwvb",
+      "sush",
+      "tobj",
+      "xinx",
+      "iarp",
+      "aqqu"
+    ],
+    "demote": [
+      "TABL",
+      "DTEL",
+      "DOMA",
+      "TTYP",
+      "VIEW",
+      "SHLP",
+      "ENQU",
+      "XINX",
+      "TYPE",
+      "IEXT",
+      "IASP",
+      "IARP",
+      "TOBJ",
+      "SUSO",
+      "SUSC",
+      "SUSH",
+      "AUTH",
+      "NROB",
+      "SHI3",
+      "PARA",
+      "SPLO",
+      "DOCT",
+      "SMIM",
+      "W3MI",
+      "W3HT",
+      "VCLS",
+      "SHMA",
+      "STYL",
+      "SCP1",
+      "DEVC",
+      "AVAS",
+      "PINF",
+      "PRAG",
+      "IWOM",
+      "IWMO",
+      "IWVB",
+      "IATU",
+      "MSAG",
+      "SSST",
+      "CHDO",
+      "AQBG",
+      "ENHC"
+    ],
+    "roles": {
+      "TRAN": "T-Code",
+      "IWSG": "OData service",
+      "IWSV": "OData service",
+      "IWPR": "OData service",
+      "SICF": "REST / ICF endpoint",
+      "WEBI": "Web service endpoint (SOAP)",
+      "WDYN": "Web Dynpro component",
+      "WDCA": "Web Dynpro configuration",
+      "WDYA": "Web Dynpro application",
+      "SXCI": "BAdI implementation (classic)",
+      "CMOD": "SMOD/CMOD enhancement project",
+      "DDLS": "CDS view",
+      "DDLX": "CDS metadata extension",
+      "SRVB": "RAP service binding",
+      "SRVD": "RAP service definition",
+      "SPRX": "Consumed service proxy",
+      "SSFO": "Smart Form",
+      "FORM": "SAPscript form",
+      "SFPF": "Adobe form",
+      "SFPI": "Adobe form interface",
+      "XSLT": "Transformation",
+      "SCVI": "Transaction/screen variant",
+      "STVI": "Transaction variant",
+      "INTF": "Interface (no entry point)",
+      "CLAS": "Class (no entry point)",
+      "FUGR": "Function group (no entry point)",
+      "PROG": "Standalone program (no entry point)",
+      "AQQU": "SAP Query",
+      "AQSG": "SAP Query InfoSet",
+      "DIAL": "Dialog module",
+      "ENHC": "Enhancement composite"
+    },
+    "enho_roles": {
+      "BADI_IMPL": "BAdI implementation (new)",
+      "HOOK_IMPL": "Implicit enhancement (hook)",
+      "CLASENH": "Class enhancement",
+      "WDYCONF": "Web Dynpro configuration",
+      "INTFENH": "Interface enhancement",
+      "FUGRENH": "Function group enhancement"
+    },
+    "role_order": [
+      "T-Code",
+      "T-Code (parameterised - no custom code)",
+      "OData service",
+      "REST / ICF endpoint",
+      "Web service endpoint (SOAP)",
+      "RAP service binding",
+      "RAP service definition",
+      "Web Dynpro application",
+      "Web Dynpro component",
+      "Web Dynpro configuration",
+      "BAdI implementation (new)",
+      "BAdI implementation (classic)",
+      "Implicit enhancement (hook)",
+      "Class enhancement",
+      "Interface enhancement",
+      "Function group enhancement",
+      "Enhancement implementation",
+      "SMOD/CMOD enhancement project",
+      "CDS view",
+      "CDS metadata extension",
+      "SAP Query",
+      "SAP Query InfoSet",
+      "Dialog module",
+      "Standalone program (no entry point)",
+      "Transaction/screen variant",
+      "Transaction variant",
+      "Smart Form",
+      "SAPscript form",
+      "Adobe form",
+      "Adobe form interface",
+      "Transformation",
+      "Consumed service proxy",
+      "Function group (no entry point)",
+      "Class (no entry point)",
+      "Interface (no entry point)"
+    ],
+    "root_types": [
+      "TRAN",
+      "IWSG",
+      "IWSV",
+      "IWPR",
+      "SICF",
+      "ENHO",
+      "SXCI",
+      "CMOD",
+      "DDLS",
+      "DDLX",
+      "SRVB",
+      "SRVD",
+      "WEBI",
+      "WDYN",
+      "SPRX",
+      "AQQU",
+      "DIAL"
+    ],
+    "type_priority": [
+      "TRAN",
+      "PROG",
+      "CLAS",
+      "FUGR",
+      "INTF",
+      "IWSG",
+      "SICF",
+      "ENHO",
+      "SXCI",
+      "CMOD",
+      "DDLS",
+      "WEBI",
+      "SSFO",
+      "FORM",
+      "SFPF",
+      "SRVB",
+      "SRVD",
+      "SPRX",
+      "SCVI",
+      "STVI",
+      "AQQU",
+      "AQSG",
+      "DIAL",
+      "MSAG",
+      "XSLT",
+      "TABL",
+      "VIEW",
+      "DTEL",
+      "DOMA",
+      "TTYP"
+    ],
+    "unreferenced_deliverables": [
+      "SSFO",
+      "FORM",
+      "SFPF",
+      "SFPI",
+      "XSLT",
+      "SCVI",
+      "STVI",
+      "DDLX",
+      "AQSG"
+    ],
+    "demote_reasons": {
+      "AQBG": "SAP Query user group (authorisation grouping, not code)",
+      "ENHC": "enhancement composite; its implementations carry the rows"
+    }
+  },
+  "_comment_fold_edges": [
+    "Edge kinds meaning 'the target is part of my implementation', so it may be folded",
+    "into the unit. Everything else (ENHANCES_*, PARAM_CALLS_TCODE at another custom",
+    "T-Code) points at a peer or at standard SAP and must not absorb it."
+  ],
+  "fold_edges": [
+    "TCODE_PGM",
+    "PARAM_REPORT",
+    "PARAM_MAINTAINS",
+    "PARAM_VARIANT",
+    "INCLUDE",
+    "FUGR_INCLUDE",
+    "CALL_FM",
+    "CALL_FM_FUGR",
+    "STATIC_CALL",
+    "NEW",
+    "CREATE_OBJECT",
+    "PERFORM_IN_PROG",
+    "SUBMIT",
+    "LITERAL_REF",
+    "USES_FORM",
+    "BADI_IMPL_CLASS",
+    "ICF_HANDLER",
+    "ODATA_MODEL",
+    "ODATA_CLASS",
+    "CDS_FROM",
+    "CDS_BASE",
+    "CDS_ASSOCIATED",
+    "VARIANT_OF_PROG",
+    "TYPE_REF_TO",
+    "INHERITS",
+    "IMPLEMENTS",
+    "CREATE_OBJ_TYPE",
+    "NEW_INSTANCE",
+    "TYPE_OF",
+    "WDY_USES",
+    "QUERY_INFOSET",
+    "DIAL_PROG",
+    "WS_PUBLISHES_FM",
+    "WS_PUBLISHES_FUGR",
+    "USES_TABLE",
+    "RUNS_QUERY"
+  ],
+  "_comment_evidence_mute": [
+    "Edges strong enough to prove an object EXISTS in a unit, too weak to say who OWNS",
+    "the unit. `TYPE zsome_struct` is the clearest case: declaring a structure that",
+    "happens to live in the MM package does not make the program MM. Including these in",
+    "the module evidence pushes multi-module attribution up -- straight",
+    "into over-attribution."
+  ],
+  "evidence_mute_edges": [
+    "TYPE_OF"
+  ],
+  "anchor_edges": [
+    "ENHANCES_BADI",
+    "ENHANCES_SPOT",
+    "ENHANCES_OBJECT",
+    "ENHANCES_INTF",
+    "CMOD_MEMBER"
+  ],
+  "scripts": {
+    "greek": "Ͱ-Ͽἀ-῿",
+    "cyrillic": "Ѐ-ӿ",
+    "arabic": "؀-ۿ",
+    "hebrew": "֐-׿",
+    "cjk": "぀-ヿ一-鿿",
+    "thai": "฀-๿",
+    "any-non-latin": "^\\x00-\\x7fÀ-ɏ"
+  },
+  "_comment_std_name_wrappers": [
+    "Custom names that WRAP a standard SAP name: transaction and screen variants,",
+    "parameterised T-Codes, forms named after the standard program they print for, and",
+    "BW extractor enhancements named after the DataSource they extend. Without this rule",
+    "variants are the largest unclassifiable population in an estate that customises",
+    "standard transactions instead of writing new ones -- most variants and many",
+    "parameterised T-Codes have no other signal at all.",
+    "",
+    "Transaction patterns are ANCHORED and every one requires a digit or a distinctive",
+    "letter run, because an unanchored 'ME' or 'CO' would match half of any estate. The",
+    "DataSource patterns are deliberately NOT anchored: the token sits mid-name",
+    "(ZXX_BW_0FI_GL_4) and '0FI_' or '2LIS_02_' cannot be mistaken for anything else."
+  ],
+  "std_name_wrappers": [
+    [
+      "^VA\\d",
+      "SD"
+    ],
+    [
+      "^VF\\d",
+      "SD"
+    ],
+    [
+      "^VL\\d",
+      "SD"
+    ],
+    [
+      "^VD\\d",
+      "SD"
+    ],
+    [
+      "^VK\\d",
+      "SD"
+    ],
+    [
+      "^VT\\d",
+      "SD"
+    ],
+    [
+      "^VOV",
+      "SD"
+    ],
+    [
+      "^ME\\d",
+      "MM"
+    ],
+    [
+      "^ME2\\w",
+      "MM"
+    ],
+    [
+      "^MB\\d",
+      "MM"
+    ],
+    [
+      "^MI\\d",
+      "MM"
+    ],
+    [
+      "^MR\\d",
+      "MM"
+    ],
+    [
+      "^MM\\d",
+      "MM"
+    ],
+    [
+      "^MSC\\d",
+      "MM"
+    ],
+    [
+      "^MIGO",
+      "MM"
+    ],
+    [
+      "^MMBE",
+      "MM"
+    ],
+    [
+      "^MB5\\w",
+      "MM"
+    ],
+    [
+      "^WB2",
+      "MM"
+    ],
+    [
+      "^MEK\\w",
+      "MM"
+    ],
+    [
+      "^F[-_]?\\d",
+      "FI"
+    ],
+    [
+      "^FB\\d",
+      "FI"
+    ],
+    [
+      "^FBL\\d",
+      "FI"
+    ],
+    [
+      "^FAGL",
+      "FI"
+    ],
+    [
+      "^F110",
+      "FI"
+    ],
+    [
+      "^FK\\d",
+      "FI"
+    ],
+    [
+      "^FD\\d",
+      "FI"
+    ],
+    [
+      "^FS\\d",
+      "FI"
+    ],
+    [
+      "^F\\.\\d",
+      "FI"
+    ],
+    [
+      "^FI\\d",
+      "FI"
+    ],
+    [
+      "^KS\\d",
+      "CO"
+    ],
+    [
+      "^KO\\d",
+      "CO"
+    ],
+    [
+      "^KE\\d",
+      "CO"
+    ],
+    [
+      "^KP\\d",
+      "CO"
+    ],
+    [
+      "^CK\\d",
+      "CO"
+    ],
+    [
+      "^KSB",
+      "CO"
+    ],
+    [
+      "^KOB",
+      "CO"
+    ],
+    [
+      "^LT\\d",
+      "WM"
+    ],
+    [
+      "^LS\\d",
+      "WM"
+    ],
+    [
+      "^LX\\d",
+      "WM"
+    ],
+    [
+      "^LM\\d",
+      "WM"
+    ],
+    [
+      "^LB\\d",
+      "WM"
+    ],
+    [
+      "^CO\\d",
+      "PP"
+    ],
+    [
+      "^MD\\d",
+      "PP"
+    ],
+    [
+      "^CS\\d",
+      "PP"
+    ],
+    [
+      "^CA\\d",
+      "PP"
+    ],
+    [
+      "^QA\\d",
+      "QM"
+    ],
+    [
+      "^QE\\d",
+      "QM"
+    ],
+    [
+      "^QM\\d",
+      "QM"
+    ],
+    [
+      "^IW\\d",
+      "PM"
+    ],
+    [
+      "^IE\\d",
+      "PM"
+    ],
+    [
+      "^IL\\d",
+      "PM"
+    ],
+    [
+      "^IP\\d",
+      "PM"
+    ],
+    [
+      "^PA\\d",
+      "HR"
+    ],
+    [
+      "^PT\\d",
+      "HR"
+    ],
+    [
+      "^PU\\d",
+      "HR"
+    ],
+    [
+      "^PC00",
+      "HR"
+    ],
+    [
+      "^MP9\\d",
+      "HR"
+    ],
+    [
+      "^RP_9\\d",
+      "HR"
+    ],
+    [
+      "^PPO\\w",
+      "HR"
+    ],
+    [
+      "^SAPQUERYH",
+      "HR"
+    ],
+    [
+      "^CJ\\d",
+      "PS"
+    ],
+    [
+      "^CN\\d",
+      "PS"
+    ],
+    [
+      "^FV\\d",
+      "FI"
+    ],
+    [
+      "^FCH\\d",
+      "FI"
+    ],
+    [
+      "^FBZ\\d",
+      "FI"
+    ],
+    [
+      "^F8\\d",
+      "FI"
+    ],
+    [
+      "^XD\\d",
+      "SD"
+    ],
+    [
+      "^XK\\d",
+      "MM"
+    ],
+    [
+      "^MEB\\d",
+      "MM"
+    ],
+    [
+      "^MIRO",
+      "MM"
+    ],
+    [
+      "^MKVZ",
+      "MM"
+    ],
+    [
+      "^AS0\\d",
+      "FI"
+    ],
+    [
+      "^AW01",
+      "FI"
+    ],
+    [
+      "^SAPLMR1M",
+      "MM"
+    ],
+    [
+      "^SAPMM07",
+      "MM"
+    ],
+    [
+      "^SAPLMEGUI",
+      "MM"
+    ],
+    [
+      "^SAPMV45A",
+      "SD"
+    ],
+    [
+      "^SAPMV50A",
+      "SD"
+    ],
+    [
+      "^SAPMV60A",
+      "SD"
+    ],
+    [
+      "^SAPLV60P",
+      "SD"
+    ],
+    [
+      "^SAPMFCHK",
+      "FI"
+    ],
+    [
+      "^SAPLFDCB",
+      "FI"
+    ],
+    [
+      "^SAPLFSKB",
+      "FI"
+    ],
+    [
+      "^SAPMF05A",
+      "FI"
+    ],
+    [
+      "^SAPLCOIH",
+      "PM"
+    ],
+    [
+      "^SAPLIQS0",
+      "PM"
+    ],
+    [
+      "SAPQUERY/H",
+      "HR"
+    ],
+    [
+      "SAPQUERY/AM",
+      "FI"
+    ],
+    [
+      "SAPQUERY/FI",
+      "FI"
+    ],
+    [
+      "SAPQUERY/MM",
+      "MM"
+    ],
+    [
+      "SAPQUERY/SD",
+      "SD"
+    ],
+    [
+      "^PYXX",
+      "HR"
+    ],
+    [
+      "^HRFORM",
+      "HR"
+    ],
+    [
+      "^RWDBB",
+      "MM"
+    ],
+    [
+      "^RWVKP",
+      "SD"
+    ],
+    [
+      "^IH09",
+      [
+        "PM",
+        "MM"
+      ]
+    ],
+    [
+      "^IH\\d",
+      "PM"
+    ],
+    [
+      "^IK\\d",
+      "PM"
+    ],
+    [
+      "^QS\\d",
+      "QM"
+    ],
+    [
+      "^QP\\d",
+      "QM"
+    ],
+    [
+      "0FI_",
+      "FI"
+    ],
+    [
+      "0CO_",
+      "CO"
+    ],
+    [
+      "0MM_",
+      "MM"
+    ],
+    [
+      "0PUR",
+      "MM"
+    ],
+    [
+      "0SD_",
+      "SD"
+    ],
+    [
+      "0HR_",
+      "HR"
+    ],
+    [
+      "0PA_",
+      "HR"
+    ],
+    [
+      "0PY_",
+      "HR"
+    ],
+    [
+      "0PM_",
+      "PM"
+    ],
+    [
+      "0QM_",
+      "QM"
+    ],
+    [
+      "0PP_",
+      "PP"
+    ],
+    [
+      "0EC_",
+      "CO"
+    ],
+    [
+      "2LIS_02_",
+      "MM"
+    ],
+    [
+      "2LIS_03_",
+      "MM"
+    ],
+    [
+      "2LIS_04_",
+      "PP"
+    ],
+    [
+      "2LIS_05_",
+      "QM"
+    ],
+    [
+      "2LIS_11_",
+      "SD"
+    ],
+    [
+      "2LIS_12_",
+      "SD"
+    ],
+    [
+      "2LIS_13_",
+      "SD"
+    ],
+    [
+      "2LIS_17_",
+      "PM"
+    ],
+    [
+      "2LIS_18_",
+      "PM"
+    ],
+    [
+      "2LIS_40_",
+      "MM"
+    ],
+    [
+      "2LIS_45_",
+      "MM"
+    ],
+    [
+      "0FI_AP",
+      "FI"
+    ],
+    [
+      "0FI_AR",
+      "FI"
+    ],
+    [
+      "0FI_GL",
+      "FI"
+    ],
+    [
+      "0FI_AA",
+      "FI"
+    ],
+    [
+      "0MAT",
+      "MM"
+    ],
+    [
+      "0VENDOR",
+      "MM"
+    ],
+    [
+      "0CUSTOMER",
+      "SD"
+    ],
+    [
+      "0COSTCENTER",
+      "CO"
+    ],
+    [
+      "0PROFIT_CTR",
+      "CO"
+    ],
+    [
+      "0GL_ACCOUNT",
+      "FI"
+    ],
+    [
+      "0COMP_CODE",
+      "FI"
+    ],
+    [
+      "0EMPLOYEE",
+      "HR"
+    ],
+    [
+      "0PERSON",
+      "HR"
+    ],
+    [
+      "0ORGUNIT",
+      "HR"
+    ],
+    [
+      "0SALES",
+      "SD"
+    ],
+    [
+      "0BILL",
+      "SD"
+    ],
+    [
+      "0DEL",
+      "SD"
+    ],
+    [
+      "^RIMARA",
+      [
+        "PM",
+        "MM"
+      ]
+    ],
+    [
+      "^RIEQUI",
+      "PM"
+    ],
+    [
+      "^RIIFLO",
+      "PM"
+    ],
+    [
+      "^RIAFVC",
+      "PM"
+    ],
+    [
+      "^RIQMEL",
+      "PM"
+    ],
+    [
+      "^HR_ADM",
+      "HR"
+    ],
+    [
+      "^SAPMV13A",
+      "SD"
+    ],
+    [
+      "^SAPLV60A",
+      "SD"
+    ],
+    [
+      "^SAPLV61A",
+      "SD"
+    ],
+    [
+      "^SAPMF02D",
+      "FI"
+    ],
+    [
+      "^SAPLKACB",
+      "CO"
+    ],
+    [
+      "^RM07MLBD",
+      "MM"
+    ],
+    [
+      "^RPTQTA",
+      "HR"
+    ],
+    [
+      "^PBAS00",
+      "HR"
+    ],
+    [
+      "^SDVFX",
+      "SD"
+    ],
+    [
+      "^VSV000",
+      "SD"
+    ],
+    [
+      "^IF_EX_ME_",
+      "MM"
+    ],
+    [
+      "^IF_EX_MRM",
+      "MM"
+    ],
+    [
+      "^SAPLMBWL",
+      "MM"
+    ],
+    [
+      "^CL_PT_",
+      "HR"
+    ],
+    [
+      "^SAPLV09C",
+      "SD"
+    ],
+    [
+      "^SAPLV14A",
+      "SD"
+    ],
+    [
+      "^RV16ACHD",
+      "SD"
+    ],
+    [
+      "^RWRF",
+      "MM"
+    ],
+    [
+      "^RWSOR",
+      "MM"
+    ],
+    [
+      "^BADI_ARTICLE",
+      "MM"
+    ],
+    [
+      "^IF_EX_BADI_ARTICLE",
+      "MM"
+    ],
+    [
+      "^SAPLWPOSN",
+      "SD"
+    ],
+    [
+      "^SAPMWPED",
+      "SD"
+    ],
+    [
+      "^ALE000",
+      "@INTEGRATION"
+    ],
+    [
+      "^SAPLBD1",
+      "@INTEGRATION"
+    ],
+    [
+      "^IDOC_CREATION_CHECK",
+      "@INTEGRATION"
+    ],
+    [
+      "^IF_EX_IDOC_",
+      "@INTEGRATION"
+    ],
+    [
+      "^SAPMV45",
+      "SD"
+    ],
+    [
+      "^SAPMV4",
+      "SD"
+    ],
+    [
+      "^RF(?!C)[A-Z]{2}",
+      "FI"
+    ]
+  ],
+  "entry_edges": [
+    "TCODE_PGM",
+    "PARAM_REPORT",
+    "PARAM_CALLS_TCODE",
+    "PARAM_VARIANT_OF",
+    "PARAM_MAINTAINS",
+    "VARIANT_OF_PROG",
+    "VARIANT_OF_TCODE",
+    "DIAL_PROG",
+    "QUERY_INFOSET",
+    "RUNS_QUERY"
+  ],
+  "_comment_webi": [
+    "WEBI = Web Service Definition. Its <VEPFUNCTION> blocks name the function modules it",
+    "exposes (<FUNCTION> + <IS_EXPOSED>X). Those FMs -- and the module that owns them --",
+    "are what the service actually does, so the edge to their function group is the only",
+    "sound way to attribute a web service. Attributing it by its own name attributes a",
+    "wrapper, not a process."
+  ],
+  "_comment_external_comm": [
+    "Markers that the code talks to something OUTSIDE the SAP system. Not module",
+    "evidence -- an outbound HTTP call says nothing about SD or MM -- but a first-class",
+    "fact about the object: it is part of the integration surface, and the integration",
+    "team has a stake in it. Fed to the configured modules.integration_bucket by R11.",
+    "CALL FUNCTION ... DESTINATION is outbound RFC; EXEC SQL and the ADBC classes are",
+    "native access to another database."
+  ],
+  "external_comm_markers": [
+    [
+      "EXEC SQL",
+      "native SQL to an external database"
+    ],
+    [
+      "CL_SQL_STATEMENT",
+      "ADBC: external database"
+    ],
+    [
+      "CL_SQL_CONNECTION",
+      "ADBC: external database"
+    ],
+    [
+      "CL_HTTP_CLIENT",
+      "outbound HTTP"
+    ],
+    [
+      "CL_WEB_HTTP_CLIENT",
+      "outbound HTTP"
+    ],
+    [
+      "CL_REST_HTTP_CLIENT",
+      "outbound REST"
+    ],
+    [
+      "IF_REST_",
+      "REST handler/client"
+    ],
+    [
+      "CL_REST_",
+      "REST handler/client"
+    ],
+    [
+      "CL_SOAP",
+      "SOAP client"
+    ],
+    [
+      "CALL FUNCTION_DESTINATION",
+      "outbound RFC"
+    ],
+    [
+      "CL_FTP",
+      "FTP transfer"
+    ]
+  ],
+  "_comment_special_modules": [
+    "Universal SAP knowledge sometimes lands on a concern that is NOT an SAP module:",
+    "an IDoc segment is integration, a logon exit is Basis. The skill must not invent a",
+    "bucket name for a customer, so entries below may use the tokens '@INTEGRATION' and",
+    "'@TECHNICAL'. They resolve to modules.integration_bucket and modules.technical_bucket",
+    "from the site config, and a rule whose token has no bucket configured simply does",
+    "not fire -- it never falls back to a core module it cannot justify."
+  ],
+  "_comment_infotype": [
+    "SAP generates a fixed DDIC family per HR infotype: P9000 (record), PA9000",
+    "(transparent table), PS9000 (field structure), P9000_AF (query fields), plus a",
+    "screen structure. None of the names carries a module token and none is referenced",
+    "from custom code -- the HR framework dispatches infotype screens from T777D -- so a",
+    "single custom infotype leaves ten-plus objects unattributed while being",
+    "unambiguously HR. The four-digit number in the customer range is what makes the",
+    "rule safe."
+  ],
+  "infotype_naming": {
+    "prefixes": [
+      "P",
+      "PA",
+      "PB",
+      "PS",
+      "PT",
+      "PC",
+      "PSKEY",
+      "PAKEY",
+      "HRP",
+      "HRT",
+      "MP",
+      "ZHCMT_BSP_PA_XX_R"
+    ],
+    "customer_range": [
+      9000,
+      9999
+    ],
+    "module": "HR",
+    "module_pool_prefixes": [
+      "MP",
+      "MPP"
+    ]
+  },
+  "_comment_append": [
+    "An append structure has no business words of its own -- ZZMC11VA1ITM, CI_BSIS,",
+    "ZBW_CE3XXXX -- but it always names its base, and the base IS the module. SAP's own",
+    "generated short text states it outright ('Append for MC11VA1ITM', 'Fields from",
+    "BSEG', 'View on MARD'), which is why the text patterns matter as much as the name."
+  ],
+  "append_text_patterns": [
+    "(?:Append|Appends|Extension|Enhanced fields?|Additional fields?|Fields)\\s+(?:for|from|to|on)\\s+([A-Z][A-Z0-9_/]{2,})",
+    "(?:View|Structure|Table)\\s+(?:on|for|of)\\s+([A-Z][A-Z0-9_/]{2,})"
+  ],
+  "_comment_std_object_prefixes": [
+    "Standard DDIC families whose NAME states the module, for resolving what a custom",
+    "object appends to or extends. Kept deliberately short: every entry is a fixed SAP",
+    "naming family, not a guess from letters. CE1-CE4 are the CO-PA line-item and segment",
+    "tables; MC<nn> are LIS communication structures where <nn> is the LIS application",
+    "(02 purchasing, 03 inventory controlling, 04 shop floor, 05 QM, 06 PM, 11 SIS sales,",
+    "12 SIS shipping, 13 SIS billing); T*KE/KED are CO-PA customizing; WPU/WPD are the",
+    "retail POS interface and WBB the bonus-buy/listing download."
+  ],
+  "std_object_prefixes": [
+    [
+      "CE1",
+      "CO"
+    ],
+    [
+      "CE2",
+      "CO"
+    ],
+    [
+      "CE3",
+      "CO"
+    ],
+    [
+      "CE4",
+      "CO"
+    ],
+    [
+      "KED",
+      "CO"
+    ],
+    [
+      "TKEB",
+      "CO"
+    ],
+    [
+      "TKEL",
+      "CO"
+    ],
+    [
+      "RKEA",
+      "CO"
+    ],
+    [
+      "MC02",
+      "MM"
+    ],
+    [
+      "MC03",
+      "MM"
+    ],
+    [
+      "MC04",
+      "PP"
+    ],
+    [
+      "MC05",
+      "QM"
+    ],
+    [
+      "MC06",
+      "PM"
+    ],
+    [
+      "MC11",
+      "SD"
+    ],
+    [
+      "MC12",
+      "SD"
+    ],
+    [
+      "MC13",
+      "SD"
+    ],
+    [
+      "MCVBAK",
+      "SD"
+    ],
+    [
+      "MCVBAP",
+      "SD"
+    ],
+    [
+      "MCEKKO",
+      "MM"
+    ],
+    [
+      "MCEKPO",
+      "MM"
+    ],
+    [
+      "WPU",
+      "SD"
+    ],
+    [
+      "WPD",
+      "SD"
+    ],
+    [
+      "WBB",
+      "SD"
+    ],
+    [
+      "MAMT",
+      "MM"
+    ],
+    [
+      "MEAN",
+      "MM"
+    ]
+  ],
+  "_comment_idoc": [
+    "IDoc naming is the most discriminating content signal an IDoc-heavy estate has, and it",
+    "is invisible to the table rules: a segment type is a DDIC structure, not a table, so",
+    "'ls_seg TYPE e1kna1m' reads as nothing at all. Both halves of the fact are worth",
+    "keeping -- ZE1KNA1M is an interface object AND a customer-master object -- so the",
+    "rule ticks the integration bucket and the module of what the segment extends.",
+    "Message types are even better: 'pi_mestyp = WBBDLD' names the business process."
+  ],
+  "idoc_naming": {
+    "segment_prefixes": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "types": [
+      "IDOC",
+      "IEXT",
+      "IDOCSEG"
+    ],
+    "bucket": "@INTEGRATION"
+  },
+  "idoc_message_types": {
+    "DEBMAS": [
+      "SD"
+    ],
+    "DEBCOR": [
+      "SD"
+    ],
+    "CLFMAS": [
+      "MM"
+    ],
+    "CREMAS": [
+      "MM"
+    ],
+    "ARTMAS": [
+      "MM"
+    ],
+    "MATMAS": [
+      "MM"
+    ],
+    "PRICAT": [
+      "MM"
+    ],
+    "COND_A": [
+      "SD"
+    ],
+    "ORDERS": [
+      "MM"
+    ],
+    "ORDRSP": [
+      "MM"
+    ],
+    "ORDCHG": [
+      "MM"
+    ],
+    "DESADV": [
+      "MM"
+    ],
+    "INVOIC": [
+      "FI"
+    ],
+    "PAYEXT": [
+      "FI"
+    ],
+    "FIDCC1": [
+      "FI"
+    ],
+    "FIDCC2": [
+      "FI"
+    ],
+    "FIDCCH": [
+      "FI"
+    ],
+    "GLROLL": [
+      "FI"
+    ],
+    "ACC_DOCUMENT": [
+      "FI"
+    ],
+    "DELVRY": [
+      "SD"
+    ],
+    "SHPMNT": [
+      "SD"
+    ],
+    "SHPORD": [
+      "SD"
+    ],
+    "SDPACK": [
+      "SD"
+    ],
+    "WPUUMS": [
+      "SD"
+    ],
+    "WPUBON": [
+      "SD"
+    ],
+    "WPUFIB": [
+      "FI"
+    ],
+    "WPUTAB": [
+      "SD"
+    ],
+    "WPUWBW": [
+      "MM"
+    ],
+    "WPUKSR": [
+      "SD"
+    ],
+    "WPDBBY": [
+      "SD"
+    ],
+    "WBBDLD": [
+      "SD"
+    ],
+    "WVINVE": [
+      "MM"
+    ],
+    "WMMBID": [
+      "MM"
+    ],
+    "MBGMCR": [
+      "MM"
+    ],
+    "WPDSTA": [
+      "SD"
+    ],
+    "HRMD_A": [
+      "HR"
+    ],
+    "HRMD_B": [
+      "HR"
+    ]
+  },
+  "_comment_composition": [
+    "Edges that mean 'the target is PART OF the source', as opposed to 'the source calls",
+    "the target'. A DDIC leaf holds no code, so these are the only facts it has: without",
+    "them every data element, domain and table type has zero inbound references and lands",
+    "in Unattached labelled 'attributed via its consumer' while having no recorded",
+    "consumer at all. They are used by the residual pass to give a component the module",
+    "of whatever uses it -- NOT as fold edges, because a domain is not part of a",
+    "program's entry-point closure and must not become a member row."
+  ],
+  "composition_edges": [
+    "DDIC_FIELD",
+    "DDIC_INCLUDE",
+    "DDIC_DOMAIN",
+    "DDIC_ROWTYPE",
+    "DDIC_BASE",
+    "DDIC_CHECK",
+    "USES_TABLE",
+    "USES_FORM",
+    "INCLUDE",
+    "FUGR_INCLUDE",
+    "QUERY_INFOSET",
+    "QUERY_USERGROUP",
+    "WS_PUBLISHES_FM",
+    "WS_PUBLISHES_FUGR",
+    "ENHC_MEMBER",
+    "DIAL_PROG",
+    "VARIANT_OF_PROG",
+    "VARIANT_OF_TCODE"
+  ],
+  "_comment_container_types": [
+    "Types that OWN their members rather than being owned by them: an enhancement",
+    "composite is the union of its implementations, a Query user group the union of its",
+    "queries. They inherit downward, from children, and never get a row of their own."
+  ],
+  "container_types": [
+    "ENHC",
+    "AQBG",
+    "AQSG",
+    "DEVC"
+  ],
+  "_comment_fugr_include": [
+    "A function group's includes are named L<AREA>TOP / L<AREA>UXX / L<AREA>F01 and a",
+    "copy of a standard group keeps that shape with a Z in front: ZLKED2TOP is the TOP",
+    "include of a clone of SAP's KED2 (CO-PA planning). Such an include has no",
+    "declarations a table rule can read and no inbound edge, so it is unattributable by",
+    "everything else -- but its own name states the standard function group it belongs to."
+  ],
+  "fugr_include_suffixes": [
+    "TOP",
+    "UXX",
+    "F01",
+    "F02",
+    "F03",
+    "I01",
+    "I02",
+    "O01",
+    "O02",
+    "E01",
+    "T99"
+  ],
+  "_comment_std_data_elements": [
+    "The strongest signal a fieldless-looking structure has. A custom table's short text",
+    "may be its own name and its check tables may all be non-discriminating, but the data",
+    "elements its fields are typed with are chosen from SAP's dictionary and they name the",
+    "business object: PAE_SNAMT is a payroll amount, GKONT_LTXT is the",
+    "offsetting G/L account, TPLST is a transportation planning point. Matched",
+    "longest-prefix-first, so PAE_ beats P.",
+    "",
+    "Deliberately excluded: MANDT, WERKS, LGORT, MATNR-style keys that every module uses.",
+    "Those live in non_discriminating_data_elements and are skipped, for the same reason",
+    "MARA is skipped in the table rules -- see _comment_non_discriminating."
+  ],
+  "std_data_elements": [
+    [
+      "PAE_",
+      "HR"
+    ],
+    [
+      "PAD_",
+      "HR"
+    ],
+    [
+      "P_",
+      "HR"
+    ],
+    [
+      "PERNR",
+      "HR"
+    ],
+    [
+      "PERSG",
+      "HR"
+    ],
+    [
+      "PERSK",
+      "HR"
+    ],
+    [
+      "ABKRS",
+      "HR"
+    ],
+    [
+      "MASSN",
+      "HR"
+    ],
+    [
+      "STELL",
+      "HR"
+    ],
+    [
+      "GKONT",
+      "FI"
+    ],
+    [
+      "HKONT",
+      "FI"
+    ],
+    [
+      "SAKNR",
+      "FI"
+    ],
+    [
+      "BELNR",
+      "FI"
+    ],
+    [
+      "BUKRS",
+      "FI"
+    ],
+    [
+      "BLART",
+      "FI"
+    ],
+    [
+      "MWSKZ",
+      "FI"
+    ],
+    [
+      "ANLN",
+      "FI"
+    ],
+    [
+      "DMBTR",
+      "FI"
+    ],
+    [
+      "WRBTR",
+      "FI"
+    ],
+    [
+      "KOSTL",
+      "CO"
+    ],
+    [
+      "PRCTR",
+      "CO"
+    ],
+    [
+      "KSTAR",
+      "CO"
+    ],
+    [
+      "AUFNR",
+      "CO"
+    ],
+    [
+      "PAOBJNR",
+      "CO"
+    ],
+    [
+      "KUNNR",
+      "SD"
+    ],
+    [
+      "VBELN",
+      "SD"
+    ],
+    [
+      "VKORG",
+      "SD"
+    ],
+    [
+      "VTWEG",
+      "SD"
+    ],
+    [
+      "SPART",
+      "SD"
+    ],
+    [
+      "KSCHL",
+      "SD"
+    ],
+    [
+      "FKART",
+      "SD"
+    ],
+    [
+      "AUART",
+      "SD"
+    ],
+    [
+      "ROUTE",
+      "SD"
+    ],
+    [
+      "LZONE",
+      "SD"
+    ],
+    [
+      "TPLST",
+      "SD"
+    ],
+    [
+      "TKNUM",
+      "SD"
+    ],
+    [
+      "VSBED",
+      "SD"
+    ],
+    [
+      "DISTZ",
+      "SD"
+    ],
+    [
+      "MEDST",
+      "SD"
+    ],
+    [
+      "KP_EFF",
+      "SD"
+    ],
+    [
+      "LIFNR",
+      "MM"
+    ],
+    [
+      "EBELN",
+      "MM"
+    ],
+    [
+      "EBELP",
+      "MM"
+    ],
+    [
+      "BANFN",
+      "MM"
+    ],
+    [
+      "MATKL",
+      "MM"
+    ],
+    [
+      "EAN11",
+      "MM"
+    ],
+    [
+      "MEINS",
+      "MM"
+    ],
+    [
+      "MEINH",
+      "MM"
+    ],
+    [
+      "BWART",
+      "MM"
+    ],
+    [
+      "MBLNR",
+      "MM"
+    ],
+    [
+      "EKGRP",
+      "MM"
+    ],
+    [
+      "EKORG",
+      "MM"
+    ],
+    [
+      "INFNR",
+      "MM"
+    ],
+    [
+      "LGNUM",
+      "MM"
+    ],
+    [
+      "EQUNR",
+      "PM"
+    ],
+    [
+      "QMNUM",
+      "QM"
+    ],
+    [
+      "PSPNR",
+      "PS"
+    ],
+    [
+      "PLNBEZ",
+      "PP"
+    ]
+  ],
+  "non_discriminating_data_elements": [
+    "MANDT",
+    "WERKS",
+    "LGORT",
+    "MATNR",
+    "SPRAS",
+    "ERDAT",
+    "ERNAM",
+    "AEDAT",
+    "AENAM",
+    "CHAR1",
+    "CHAR2",
+    "CHAR4",
+    "CHAR10",
+    "CHAR20",
+    "CHAR30",
+    "CHAR40",
+    "CHAR50",
+    "CHAR100",
+    "CHAR255",
+    "TEXT10",
+    "TEXT20",
+    "TEXT30",
+    "TEXT40",
+    "TEXT50",
+    "NUMC",
+    "SYSUUID",
+    "TIMESTAMP",
+    "XFELD",
+    "FLAG",
+    "UNAME",
+    "DATUM",
+    "UZEIT",
+    "INT4",
+    "MENGE"
+  ],
+  "_comment_presentation_types": [
+    "A SmartStyle, a page format and a MIME logo have no business logic to read and no",
+    "name convention to match. They are formatting assets, and the honest answer is the",
+    "technical bucket with that stated as the reason -- not silence, which reads as a",
+    "failure of the index, and not a business module, which would be invented."
+  ],
+  "presentation_types": [
+    "SSST",
+    "SPLO",
+    "W3MI",
+    "IATU",
+    "SFPI",
+    "STYL"
+  ],
+  "_comment_definitional_edges": [
+    "Edges where the SOURCE is defined by the TARGET, the opposite of composition_edges.",
+    "A table type IS its row type; a table-maintenance object IS about the table it",
+    "maintains; a screen variant IS a variant of its program. So these inherit downward,",
+    "from the target, and they are tried FIRST -- 'this object is that object' is a",
+    "stronger claim than 'something that uses this object is MM'."
+  ],
+  "definitional_edges": [
+    "DDIC_ROWTYPE",
+    "DDIC_BASE",
+    "DDIC_INCLUDE",
+    "DDIC_DOMAIN",
+    "VARIANT_OF_PROG",
+    "VARIANT_OF_TCODE",
+    "PARAM_VARIANT_OF",
+    "QUERY_INFOSET",
+    "ENHANCES_OBJECT",
+    "ENHANCES_CLASS",
+    "DIAL_PROG",
+    "TCODE_PGM",
+    "VARIANT_IN_TCVARIANT",
+    "RUNS_QUERY"
+  ],
+  "_comment_std_name_ignore": [
+    "Standard programs and transactions that every module uses, so wrapping one says",
+    "nothing about the wrapper. SM30 maintains a table -- the module belongs to the",
+    "TABLE, not to SM30 -- and SAPLSVAR is the variant dialog, SAPLSLVC_FULLSCREEN the",
+    "ALV grid. Mapping any of them to a module would attribute twenty unrelated units to",
+    "whatever bucket the list happened to name; leaving them out of the tables entirely",
+    "would instead park them on the research worklist forever. So they are listed here:",
+    "known, and known to carry no module.",
+    "",
+    "This is the R9 twin of std_call_ignore, which does the same job for function calls."
+  ],
+  "std_name_ignore": [
+    "SM30",
+    "SM31",
+    "SM34",
+    "SE16",
+    "SE16N",
+    "SE17",
+    "SE38",
+    "SA38",
+    "SE93",
+    "SHD0",
+    "STMS",
+    "SU53",
+    "SP01",
+    "SM37",
+    "SAPLSVAR",
+    "SAPLSLVC_FULLSCREEN",
+    "SAPLSEXM",
+    "SAPLALDB",
+    "SAPLSPO2",
+    "SAPLSPO1",
+    "SAPLSZA1",
+    "SAPLSTUP",
+    "SAPLSKBH",
+    "SAPLSTRD",
+    "SAPLSVIM",
+    "SAPLSFES",
+    "RSU5_SAPI_BADI",
+    "IF_EX_RSU5_SAPI_BADI"
+  ],
+  "_comment_generated_names": [
+    "Machine-generated program names. 'GP' followed by a long alphanumeric run is a",
+    "generated table-maintenance or print program; the name is a hash and carries no",
+    "business meaning whatsoever. Listing them here keeps them off the research worklist,",
+    "which otherwise asks a human to look up a hash on every single run."
+  ],
+  "generated_name_patterns": [
+    "^GP[0-9A-Z]{20,}$",
+    "^%_[A-Z0-9_]+$",
+    "^SAPDBP[A-Z0-9]+$",
+    "^/1[A-Z0-9]{2}/[A-Z0-9_]+$"
+  ]
+}

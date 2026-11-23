@@ -1,0 +1,17 @@
+{
+  "name": "abap-docs-marketplace",
+  "owner": {
+    "name": "HassanSaif"
+  },
+  "metadata": {
+    "description": "Team marketplace for the SAP ABAP documentation skills."
+  },
+  "plugins": [
+    {
+      "name": "abap-docs",
+      "source": "./",
+      "description": "Repo-wide ABAP documentation passes, single-object drill-downs and a module ownership index for abapGit repositories.",
+      "version": "1.1.0"
+    }
+  ]
+}
